@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Detalles Herith | Regalos que enamoran</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+      body {
+        margin: 0;
+        background: #fafafa;
+        color: #333;
+      }
+
+      /* HEADER */
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        background: white;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+      }
+      .navbar {
+        max-width: 1200px;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px;
+      }
+      .logo {
+        font-size: 22px;
+        font-weight: 700;
+        color: #ff4d6d;
+      }
+      nav button {
+        background: none;
+        border: none;
+        font-weight: 600;
+        margin-left: 20px;
+        cursor: pointer;
+        color: #444;
+      }
+      nav button:hover {
+        color: #ff4d6d;
+      }
+
+      /* HERO */
+      .hero {
+        background: linear-gradient(135deg, #ff4d6d, #ff8fa3);
+        color: white;
+        padding: 80px 20px;
+      }
+      .hero-content {
+        max-width: 1200px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        align-items: center;
+      }
+      .hero h1 {
+        font-size: 42px;
+        margin: 0;
+      }
+      .hero p {
+        font-size: 18px;
+        opacity: 0.95;
+      }
+      .hero-actions button {
+        margin-top: 20px;
+        margin-right: 10px;
+        padding: 14px 28px;
+        border: none;
+        border-radius: 30px;
+        font-weight: 600;
+        font-size: 15px;
+        cursor: pointer;
+      }
+      .primary {
+        background: white;
+        color: #ff4d6d;
+      }
+      .secondary {
+        background: transparent;
+        color: white;
+        border: 2px solid white;
+      }
+
+      .hero img {
+        width: 100%;
+        border-radius: 25px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+      }
+
+      /* SECTIONS */
+      .section {
+        display: none;
+        padding: 60px 20px;
+      }
+      .section.active {
+        display: block;
+      }
+      .section-title {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+      .section-title h2 {
+        font-size: 32px;
+        margin-bottom: 10px;
+      }
+      .section-title p {
+        color: #666;
+      }
+
+      /* PRODUCTS */
+      .products {
+        max-width: 1200px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 25px;
+      }
+      .card {
+        background: white;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+        transition: 0.3s;
+      }
+      .card:hover {
+        transform: translateY(-8px);
+      }
+      .card img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+      }
+      .card-body {
+        padding: 20px;
+      }
+      .card-body h3 {
+        margin: 0 0 5px;
+      }
+      .price {
+        color: #ff4d6d;
+        font-weight: 700;
+        font-size: 18px;
+      }
+      .card-body a {
+        display: block;
+        text-align: center;
+        margin-top: 15px;
+        background: #25d366;
+        color: white;
+        padding: 12px;
+        border-radius: 25px;
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      /* QR */
+      .qr {
+        text-align: center;
+        margin-top: 50px;
+      }
+      .qr img {
+        width: 180px;
+      }
+
+      /* FOOTER */
+      footer {
+        background: #111;
+        color: #bbb;
+        text-align: center;
+        padding: 25px;
+        margin-top: 60px;
+      }
+
+      @media (max-width: 900px) {
+        .hero-content {
+          grid-template-columns: 1fr;
+        }
+        .hero h1 {
+          font-size: 32px;
+        }
+      }
+      @media (max-width: 600px) {
+        .hero {
+          padding: 50px 20px;
+        }
+
+        .hero h1 {
+          font-size: 26px;
+        }
+
+        .hero p {
+          font-size: 16px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="navbar">
+        <div class="logo">💖 Detalles Herith</div>
+        <nav>
+          <button onclick="show('home')">Inicio</button>
+          <button onclick="show('boxes')">Boxes</button>
+          <button onclick="show('peluches')">Peluches</button>
+        </nav>
+      </div>
+    </header>
+
+    <!-- HOME -->
+    <section id="home" class="section active">
+      <div class="hero">
+        <div class="hero-content">
+          <div>
+            <h1>Regalos que enamoran de verdad</h1>
+            <p>
+              Boxes personalizados, peluches y detalles únicos para sorprender
+              en cualquier ocasión. Compra fácil, paga por Yape y coordina todo
+              por WhatsApp.
+            </p>
+            <div class="hero-actions">
+              <button class="primary" onclick="show('boxes')">Ver Boxes</button>
+              <button class="secondary" onclick="show('peluches')">
+                Ver Peluches
+              </button>
+            </div>
+          </div>
+          <img
+            src="https://images.unsplash.com/photo-1607082349566-187342175e2f"
+            alt="Regalos"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- BOXES -->
+    <section id="boxes" class="section">
+      <div class="section-title">
+        <h2>Boxes personalizados</h2>
+        <p>Detalles listos para sorprender</p>
+      </div>
+
+      <div class="products">
+        <div class="card">
+          <img src="images/box1.jpg" />
+          <div class="card-body">
+            <h3>Box ...</h3>
+            <div class="price">S/ 49.90</div>
+            <a href="https://wa.me/51986341772?text=Quiero%20el%20Box%20Amor"
+              >Comprar por WhatsApp</a
+            >
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="images/tulipan.webp" />
+          <div class="card-body">
+            <h3>Box ...</h3>
+            <div class="price">S/ 69.90</div>
+            <a
+              href="https://wa.me/51986341772?text=Quiero%20el%20Box%20Sorpresa"
+              >Comprar por WhatsApp</a
+            >
+          </div>
+        </div>
+        <div class="card">
+          <img src="images/box1.jpg" />
+          <div class="card-body">
+            <h3>Box ...</h3>
+            <div class="price">S/ 69.90</div>
+            <a
+              href="https://wa.me/51986341772?text=Quiero%20el%20Box%20Sorpresa"
+              >Comprar por WhatsApp</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="qr">
+        <p>Paga con Yape y envíanos la captura</p>
+        <img src="images/yape-qr.jpeg" />
+      </div>
+    </section>
+
+    <!-- PELUCHES -->
+    <section id="peluches" class="section">
+      <div class="section-title">
+        <h2>Peluches</h2>
+        <p>Suaves, grandes y adorables</p>
+      </div>
+
+      <div class="products">
+        <div class="card">
+          <img src="images/enojon.webp" />
+          <div class="card-body">
+            <h3>Gato enojón xd</h3>
+            <div class="price">S/ 89.90</div>
+            <a href="https://wa.me/51986341772?text=Quiero%20el%20Oso%20Gigante"
+              >Comprar por WhatsApp</a
+            >
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="images/Cordero.webp" />
+          <div class="card-body">
+            <h3>Peluche Corderito</h3>
+            <div class="price">S/ 39.90</div>
+            <a
+              href="https://wa.me/51986341772?text=Quiero%20el%20Peluche%20Corazón"
+              >Comprar por WhatsApp</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="qr">
+        <p>Compra directa por WhatsApp</p>
+        <img src="images/yape-qr.jpeg" />
+      </div>
+    </section>
+
+    <footer>© 2026 Detalles Herith · Regalos con amor</footer>
+
+    <script>
+      function show(id) {
+        document
+          .querySelectorAll(".section")
+          .forEach((s) => s.classList.remove("active"));
+        document.getElementById(id).classList.add("active");
+      }
+    </script>
+  </body>
+</html>
