@@ -5,6 +5,7 @@
   <meta charset="UTF-8" />
   <title>Detalles Herith | Regalos que enamoran</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Boxes personalizados, peluches, ramos de flores y detalles únicos en Cañete. Envío a domicilio disponible.">
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
 
@@ -50,6 +51,7 @@
       font-weight: 600;
       margin-left: 20px;
       cursor: pointer;
+      transition: color 0.3s;
     }
 
     nav button:hover {
@@ -89,6 +91,7 @@
       border: none;
       font-weight: 600;
       cursor: pointer;
+      transition: all 0.3s;
     }
 
     .primary {
@@ -96,10 +99,20 @@
       color: #ff4d6d;
     }
 
+    .primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
     .secondary {
       background: transparent;
       color: white;
       border: 2px solid white;
+    }
+
+    .secondary:hover {
+      background: white;
+      color: #ff4d6d;
     }
 
     .hero img {
@@ -120,6 +133,12 @@
     .section-title {
       text-align: center;
       margin-bottom: 40px;
+    }
+
+    .section-title h2 {
+      font-size: 36px;
+      color: #ff4d6d;
+      margin-bottom: 10px;
     }
 
     /* PRODUCTS */
@@ -157,7 +176,6 @@
       overflow: hidden;
     }
 
-    /* Indicador simple y claro */
     .click-indicator {
       position: absolute;
       top: 10px;
@@ -177,20 +195,16 @@
     }
 
     @keyframes gentlePulse {
-
-      0%,
-      100% {
+      0%, 100% {
         transform: scale(1);
         box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
       }
-
       50% {
         transform: scale(1.08);
         box-shadow: 0 5px 15px rgba(255, 77, 109, 0.4);
       }
     }
 
-    /* Efecto hover suave en toda la tarjeta */
     .card:hover .card-img-container img {
       transform: scale(1.05);
       transition: transform 0.3s ease;
@@ -221,24 +235,257 @@
       border-radius: 25px;
       text-decoration: none;
       font-weight: 600;
+      transition: all 0.3s;
     }
 
-    /* QR */
-    .qr {
-      text-align: center;
+    .card-body a:hover {
+      background: #1fb855;
+      transform: translateY(-2px);
+    }
+
+    /* TESTIMONIOS */
+    .testimonials {
+      max-width: 1200px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
       margin-top: 40px;
     }
 
-    .qr img {
-      width: 180px;
+    .testimonial-card {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+      transition: 0.3s;
     }
 
+    .testimonial-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+    }
+
+    .testimonial-card img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+    }
+
+    .testimonial-content {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .testimonial-content p {
+      font-style: italic;
+      color: #666;
+      margin-bottom: 15px;
+    }
+
+    .testimonial-author {
+      font-weight: 600;
+      color: #ff4d6d;
+    }
+
+    .stars {
+      color: #ffd700;
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    /* COMO COMPRAR */
+    .how-to-buy {
+      background: linear-gradient(135deg, #ff4d6d, #ff8fa3);
+      color: white;
+      padding: 60px 20px;
+      margin: 60px 0;
+    }
+
+    .how-to-buy-content {
+      max-width: 1200px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .how-to-buy h2 {
+      font-size: 36px;
+      margin-bottom: 50px;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      margin-top: 40px;
+    }
+
+    .step {
+      text-align: center;
+    }
+
+    .step-number {
+      width: 60px;
+      height: 60px;
+      background: white;
+      color: #ff4d6d;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      font-weight: 700;
+      margin: 0 auto 20px;
+    }
+
+    .step h3 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .step p {
+      font-size: 16px;
+      opacity: 0.95;
+    }
+
+    /* FAQ */
+    .faq {
+      max-width: 800px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    .faq-item {
+      background: white;
+      border-radius: 15px;
+      padding: 25px;
+      margin-bottom: 20px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+      transition: 0.3s;
+    }
+
+    .faq-item:hover {
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    }
+
+    .faq-question {
+      font-weight: 600;
+      color: #ff4d6d;
+      font-size: 18px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .faq-answer {
+      color: #666;
+      line-height: 1.6;
+    }
+
+    /* WHATSAPP FLOTANTE */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #25d366;
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+      cursor: pointer;
+      transition: all 0.3s;
+      z-index: 1000;
+      text-decoration: none;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.1);
+      }
+    }
+
+    .whatsapp-float:hover {
+      background: #1fb855;
+      transform: scale(1.15);
+      box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
+    }
+
+    /* FOOTER */
     footer {
       background: #111;
       color: #bbb;
-      text-align: center;
-      padding: 25px;
+      padding: 40px 20px 25px;
       margin-top: 60px;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      margin-bottom: 30px;
+    }
+
+    .footer-section h3 {
+      color: #ff4d6d;
+      margin-bottom: 15px;
+    }
+
+    .footer-section p,
+    .footer-section a {
+      color: #bbb;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 10px;
+      transition: color 0.3s;
+    }
+
+    .footer-section a:hover {
+      color: #ff4d6d;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .social-links a {
+      width: 40px;
+      height: 40px;
+      background: #333;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      transition: all 0.3s;
+    }
+
+    .social-links a:hover {
+      background: #ff4d6d;
+      transform: translateY(-3px);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 20px;
+      border-top: 1px solid #333;
     }
 
     /* MODAL */
@@ -275,6 +522,12 @@
       right: 15px;
       font-size: 22px;
       cursor: pointer;
+      color: #999;
+      transition: color 0.3s;
+    }
+
+    .close:hover {
+      color: #ff4d6d;
     }
 
     @keyframes zoom {
@@ -282,7 +535,6 @@
         transform: scale(0.8);
         opacity: 0;
       }
-
       to {
         transform: scale(1);
         opacity: 1;
@@ -292,6 +544,32 @@
     @media (max-width: 900px) {
       .hero-content {
         grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 32px;
+      }
+
+      nav button {
+        margin-left: 10px;
+        font-size: 14px;
+      }
+
+      .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+        bottom: 20px;
+        right: 20px;
+      }
+
+      .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .social-links {
+        justify-content: center;
       }
     }
   </style>
@@ -317,19 +595,119 @@
         <div>
           <h1>Regalos que enamoran de verdad</h1>
           <p>Boxes personalizados, peluches, ramos de flores y detalles únicos para sorprender en cualquier ocasión.
-            Compra fácil, paga
-            por Yape y coordina todo por WhatsApp.</p>
+            Compra fácil, paga por Yape y coordina todo por WhatsApp.</p>
           <div class="hero-actions">
             <button class="primary" onclick="show('boxes')">Ver Boxes</button>
-            <button class="secondary" onclick="show('peluches')">
-              Ver Peluches
-            </button>
-            <button class="secondary" onclick="show('ramos')">
-              Ver Ramos
-            </button>
+            <button class="secondary" onclick="show('peluches')">Ver Peluches</button>
+            <button class="secondary" onclick="show('ramos')">Ver Ramos</button>
           </div>
         </div>
-        <img src="images/logofondo.png" />
+        <img src="images/logofondo.png" alt="Detalles Herith" />
+      </div>
+    </div>
+
+    <!-- COMO COMPRAR -->
+    <div class="how-to-buy">
+      <div class="how-to-buy-content">
+        <h2>¿Cómo comprar?</h2>
+        <div class="steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            <h3>Elige tu producto favorito</h3>
+            <p>Navega por nuestros boxes, peluches y ramos. ¡Encuentra el regalo perfecto!</p>
+          </div>
+          <div class="step">
+            <div class="step-number">2</div>
+            <h3>Contáctanos por WhatsApp</h3>
+            <p>Escríbenos para personalizar tu pedido y coordinar los detalles</p>
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            <h3>Paga y recibe</h3>
+            <p>Paga por Yape o depósito y recibe tu pedido en 1-2 días</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TESTIMONIOS -->
+    <div class="testimonials">
+      <div class="section-title">
+        <h2>Clientes felices 💕</h2>
+        <p>Esto dicen quienes ya confiaron en nosotros</p>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <img src="images/Cliente1.jpeg" alt="Cliente satisfecho" />
+          <div class="testimonial-content">
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+            <p>"¡Me encantó mi box! Súper lindo y bien personalizado. Sin duda volveré a comprar"</p>
+            <div class="testimonial-author">- Cliente satisfecho</div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <img src="images/Cliente2.jpeg" alt="Cliente satisfecho" />
+          <div class="testimonial-content">
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+            <p>"El ramo llegó hermoso y justo como lo pedí. ¡Mi novio quedó feliz!"</p>
+            <div class="testimonial-author">- Cliente satisfecho</div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <img src="images/Cliente3.jpeg" alt="Cliente satisfecho" />
+          <div class="testimonial-content">
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+            <p>"Excelente atención y calidad. El ramo quedó precioso, 100% recomendado"</p>
+            <div class="testimonial-author">- Cliente satisfecho</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ -->
+    <div class="faq">
+      <div class="section-title">
+        <h2>Preguntas Frecuentes</h2>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          📦 ¿Hacen envíos a domicilio?
+        </div>
+        <div class="faq-answer">
+          Sí, hacemos envíos a domicilio con un costo adicional si es posible llegar a la zona. También ofrecemos puntos de encuentro cercanos en lugares seguros y concurridos para tu comodidad.
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          ⏰ ¿Cuánto demora la entrega?
+        </div>
+        <div class="faq-answer">
+          La entrega demora de 1 a 2 días hábiles después de confirmar tu pedido y el pago.
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          ✨ ¿Puedo personalizar mi box?
+        </div>
+        <div class="faq-answer">
+          ¡Por supuesto! Nos encanta personalizar cada detalle según tus gustos. Contáctanos por WhatsApp y cuéntanos qué te gustaría.
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          💳 ¿Qué métodos de pago aceptan?
+        </div>
+        <div class="faq-answer">
+          Por el momento aceptamos Yape y depósito a cuenta BCP. El proceso es súper rápido y seguro.
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          📍 ¿A qué zonas entregan?
+        </div>
+        <div class="faq-answer">
+          Hacemos entregas en las zonas de Cañete: Nuevo Imperial, Imperial, San Vicente, San Luis y Cerro Azul.
+        </div>
       </div>
     </div>
   </section>
@@ -348,7 +726,7 @@
             'S/ 75.90'
           )">
         <div class="card-img-container">
-          <img src="images/BoxCorderito.png" />
+          <img src="images/BoxCorderito.png" alt="Box Corderito" />
           <div class="click-indicator">
             <span>👁️</span>
             <span>Click para ver</span>
@@ -360,9 +738,7 @@
           <a href="https://wa.me/51986341772" onclick="event.stopPropagation()">Comprar por WhatsApp</a>
         </div>
       </div>
-    </div>
 
-    <div class="products">
       <div class="card" onclick="openModal(
             'images/BoxHelloKitty.png',
             'Box Hello Kitty',
@@ -370,7 +746,7 @@
             'S/ 75.90'
           )">
         <div class="card-img-container">
-          <img src="images/BoxHelloKitty.png" />
+          <img src="images/BoxHelloKitty.png" alt="Box Hello Kitty" />
           <div class="click-indicator">
             <span>👁️</span>
             <span>Click para ver</span>
@@ -382,9 +758,7 @@
           <a href="https://wa.me/51986341772" onclick="event.stopPropagation()">Comprar por WhatsApp</a>
         </div>
       </div>
-    </div>
 
-    <div class="products">
       <div class="card" onclick="openModal(
             'images/BoxLotso.jpeg',
             'Box Lotso Dormilón',
@@ -392,7 +766,7 @@
             'S/ 60.90'
           )">
         <div class="card-img-container">
-          <img src="images/BoxLotso.jpeg" />
+          <img src="images/BoxLotso.jpeg" alt="Box Lotso Dormilón" />
           <div class="click-indicator">
             <span>👁️</span>
             <span>Click para ver</span>
@@ -404,9 +778,7 @@
           <a href="https://wa.me/51986341772" onclick="event.stopPropagation()">Comprar por WhatsApp</a>
         </div>
       </div>
-    </div>
 
-    <div class="products">
       <div class="card" onclick="openModal(
             'images/BoxEncanto.jpeg',
             'Box Encanto',
@@ -414,7 +786,7 @@
             'S/ 85.90'
           )">
         <div class="card-img-container">
-          <img src="images/BoxEncanto.jpeg" />
+          <img src="images/BoxEncanto.jpeg" alt="Box Encanto" />
           <div class="click-indicator">
             <span>👁️</span>
             <span>Click para ver</span>
@@ -426,17 +798,15 @@
           <a href="https://wa.me/51986341772" onclick="event.stopPropagation()">Comprar por WhatsApp</a>
         </div>
       </div>
-    </div>
 
-    <div class="products">
       <div class="card" onclick="openModal(
             'images/BoxSnoopy.jpeg',
             'Box Snoopy',
             'Incluye Caja personalizada, Cubo giratorio de folcote, Peluche snoppy, 4 imágenes personalizadas, Dulces y Dedicatoria',
-            'S/ 80.90'
+            'S/ 85.90'
           )">
         <div class="card-img-container">
-          <img src="images/BoxSnoopy.jpeg" />
+          <img src="images/BoxSnoopy.jpeg" alt="Box Snoopy" />
           <div class="click-indicator">
             <span>👁️</span>
             <span>Click para ver</span>
@@ -448,9 +818,7 @@
           <a href="https://wa.me/51986341772" onclick="event.stopPropagation()">Comprar por WhatsApp</a>
         </div>
       </div>
-    </div>
 
-    <div class="products">
       <div class="card" onclick="openModal(
             'images/BoxAmore.jpeg',
             'Box Amore',
@@ -458,7 +826,7 @@
             'S/ 75.90'
           )">
         <div class="card-img-container">
-          <img src="images/BoxAmore.jpeg" />
+          <img src="images/BoxAmore.jpeg" alt="Box Amore" />
           <div class="click-indicator">
             <span>👁️</span>
             <span>Click para ver</span>
@@ -479,7 +847,7 @@
       <h2>Peluches</h2>
     </div>
 
-        <div class="products">
+    <div class="products">
       <div class="card" onclick="openModal(
             'images/PelucheSpiderman.png',
             'Peluche Spiderman',
@@ -487,7 +855,7 @@
             'S/ 24.90'
           )">
         <div class="card-img-container">
-          <img src="images/PelucheSpiderman.png" />
+          <img src="images/PelucheSpiderman.png" alt="Peluche Spiderman" />
           <div class="click-indicator">
             <span>👁️</span>
             <span>Click para ver</span>
@@ -499,17 +867,15 @@
           <a href="https://wa.me/51986341772" onclick="event.stopPropagation()">Comprar por WhatsApp</a>
         </div>
       </div>
-    </div>
 
-        <div class="products">
       <div class="card" onclick="openModal(
             'images/PelucheCorderitoTulipán.png',
             'Peluche Corderito Tulipán',
-            'Tierno, delicado y lleno de amor 🤍🌷 Perfecto para regalar cariño en forma de abrazo. Ideal para aniversarios, cumpleaños o simplemente decir “pensé en ti”.',
+            'Tierno, delicado y lleno de amor 🤍🌷 Perfecto para regalar cariño en forma de abrazo. Ideal para aniversarios, cumpleaños o simplemente decir pensé en ti.',
             'S/ 26.90'
           )">
         <div class="card-img-container">
-          <img src="images/PelucheCorderitoTulipán.png" />
+          <img src="images/PelucheCorderitoTulipán.png" alt="Peluche Corderito Tulipán" />
           <div class="click-indicator">
             <span>👁️</span>
             <span>Click para ver</span>
@@ -521,17 +887,15 @@
           <a href="https://wa.me/51986341772" onclick="event.stopPropagation()">Comprar por WhatsApp</a>
         </div>
       </div>
-    </div>
 
-    <div class="products">
       <div class="card" onclick="openModal(
             'images/PelucheHelloKitty.png',
             'Peluche Hello Kitty',
             'Un clásico que nunca falla 💕 Suave, adorable y perfecto para derretir corazones. Ideal para regalar a alguien especial o consentirte.',
-            'S/ 23.90'
+            'S/ 24.90'
           )">
         <div class="card-img-container">
-          <img src="images/PelucheHelloKitty.png" />
+          <img src="images/PelucheHelloKitty.png" alt="Peluche Hello Kitty" />
           <div class="click-indicator">
             <span>👁️</span>
             <span>Click para ver</span>
@@ -543,9 +907,7 @@
           <a href="https://wa.me/51986341772" onclick="event.stopPropagation()">Comprar por WhatsApp</a>
         </div>
       </div>
-    </div>
 
-    <div class="products">
       <div class="card" onclick="openModal(
             'images/PelucheHelloKitty2.png',
             'Peluche Hello Kitty 2',
@@ -553,7 +915,7 @@
             'S/ 26.90'
           )">
         <div class="card-img-container">
-          <img src="images/PelucheHelloKitty2.png" />
+          <img src="images/PelucheHelloKitty2.png" alt="Peluche Hello Kitty 2" />
           <div class="click-indicator">
             <span>👁️</span>
             <span>Click para ver</span>
@@ -565,9 +927,7 @@
           <a href="https://wa.me/51986341772" onclick="event.stopPropagation()">Comprar por WhatsApp</a>
         </div>
       </div>
-    </div>
 
-    <div class="products">
       <div class="card" onclick="playPelucheMusic(); openModal(
             'images/PelucheMusical.png',
             'Oso Musical',
@@ -575,22 +935,19 @@
             'S/ 25.90'
           )">
         <div class="card-img-container">
-          <img src="images/PelucheMusical.png" />
+          <img src="images/PelucheMusical.png" alt="Oso Musical" />
           <div class="click-indicator">
             <span>👁️</span>
             <span>Click para ver</span>
           </div>
         </div>
-
         <div class="card-body">
           <h3>Oso Musical</h3>
-          <div class="price">S/25.90</div>
+          <div class="price">S/ 25.90</div>
           <a href="https://wa.me/51986341772" onclick="event.stopPropagation()">Comprar por WhatsApp</a>
         </div>
       </div>
-    </div>
 
-    <div class="products">
       <div class="card" onclick="openModal(
             'images/PeluchePerrito.png',
             'Peluche Love',
@@ -598,7 +955,7 @@
             'S/ 23.90'
           )">
         <div class="card-img-container">
-          <img src="images/PeluchePerrito.png" />
+          <img src="images/PeluchePerrito.png" alt="Peluche Love" />
           <div class="click-indicator">
             <span>👁️</span>
             <span>Click para ver</span>
@@ -610,9 +967,7 @@
           <a href="https://wa.me/51986341772" onclick="event.stopPropagation()">Comprar por WhatsApp</a>
         </div>
       </div>
-    </div>
 
-    <div class="products">
       <div class="card" onclick="openModal(
             'images/PelucheSnoopy.png',
             'Peluche Snoopy',
@@ -620,7 +975,7 @@
             'S/ 27.90'
           )">
         <div class="card-img-container">
-          <img src="images/PelucheSnoopy.png" />
+          <img src="images/PelucheSnoopy.png" alt="Peluche Snoopy" />
           <div class="click-indicator">
             <span>👁️</span>
             <span>Click para ver</span>
@@ -633,7 +988,6 @@
         </div>
       </div>
     </div>
-
   </section>
 
   <!-- RAMOS -->
@@ -643,7 +997,6 @@
     </div>
 
     <div class="products">
-      <!-- Aquí puedes agregar tus productos de ramos -->
       <div class="card" onclick="openModal(
             'images/RamoLotso.jpeg',
             'Ramo Lotso Dormilón',
@@ -651,7 +1004,7 @@
             'S/ 90.90'
           )">
         <div class="card-img-container">
-          <img src="images/RamoLotso.jpeg" />
+          <img src="images/RamoLotso.jpeg" alt="Ramo Lotso Dormilón" />
           <div class="click-indicator">
             <span>👁️</span>
             <span>Click para ver</span>
@@ -663,9 +1016,7 @@
           <a href="https://wa.me/51986341772" onclick="event.stopPropagation()">Comprar por WhatsApp</a>
         </div>
       </div>
-    </div>
-    <div class="products">
-      <!-- Aquí puedes agregar tus productos de ramos -->
+
       <div class="card" onclick="openModal(
             'images/RamoAmore.jpeg',
             'Ramo Amore',
@@ -673,7 +1024,7 @@
             'S/ 50.90'
           )">
         <div class="card-img-container">
-          <img src="images/RamoAmore.jpeg" />
+          <img src="images/RamoAmore.jpeg" alt="Ramo Amore" />
           <div class="click-indicator">
             <span>👁️</span>
             <span>Click para ver</span>
@@ -686,21 +1037,60 @@
         </div>
       </div>
     </div>
-
   </section>
 
   <!-- MODAL -->
   <div id="modal" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeModal()">×</span>
-      <img id="modal-img" />
+      <img id="modal-img" alt="Producto" />
       <h3 id="modal-title"></h3>
       <p id="modal-desc"></p>
       <div class="price" id="modal-price"></div>
     </div>
   </div>
 
-  <footer>© 2026 Detalles Herith · Regalos con amor</footer>
+  <!-- BOTON WHATSAPP FLOTANTE -->
+  <a href="https://wa.me/51986341772" class="whatsapp-float" target="_blank" aria-label="Contactar por WhatsApp">
+    📱
+  </a>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>💖 Detalles Herith</h3>
+        <p>Regalos que enamoran de verdad</p>
+        <p>Boxes personalizados, peluches y ramos para toda ocasión</p>
+      </div>
+      <div class="footer-section">
+        <h3>Contacto</h3>
+        <p>📱 WhatsApp: +51 986 341 772</p>
+        <p>📍 Cañete, Lima - Perú</p>
+        <p>⏰ Lun - Dom: 9AM - 8PM</p>
+      </div>
+      <div class="footer-section">
+        <h3>Zonas de entrega</h3>
+        <p>✓ Nuevo Imperial</p>
+        <p>✓ Imperial</p>
+        <p>✓ San Vicente</p>
+        <p>✓ San Luis</p>
+        <p>✓ Cerro Azul</p>
+      </div>
+      <div class="footer-section">
+        <h3>Síguenos</h3>
+        <div class="social-links">
+          <a href="#" onclick="show('home'); return false;" aria-label="Instagram">📷</a>
+          <a href="#" onclick="show('home'); return false;" aria-label="Facebook">📘</a>
+          <a href="#" onclick="show('home'); return false;" aria-label="TikTok">🎵</a>
+        </div>
+        <p style="margin-top: 15px; font-size: 14px;">Próximamente actualizaremos nuestras redes sociales</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2026 Detalles Herith · Regalos con amor
+    </div>
+  </footer>
+
   <audio id="music1">
     <source src="music/ocean.mp4" type="audio/mp4">
   </audio>
@@ -708,6 +1098,7 @@
   <audio id="music2">
     <source src="music/tanto.mp4" type="audio/mp4">
   </audio>
+
   <script>
     const musics = [
       document.getElementById("music1"),
@@ -717,24 +1108,20 @@
     let currentMusic = null;
 
     function playPelucheMusic() {
-      // detener cualquier audio anterior
       musics.forEach(m => {
         m.pause();
         m.currentTime = 0;
       });
 
-      // elegir UNA música al azar
       currentMusic = musics[Math.floor(Math.random() * musics.length)];
-
       currentMusic.volume = 0.35;
       currentMusic.play();
     }
 
     function show(id) {
-      document
-        .querySelectorAll(".section")
-        .forEach(s => s.classList.remove("active"));
+      document.querySelectorAll(".section").forEach(s => s.classList.remove("active"));
       document.getElementById(id).classList.add("active");
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     function openModal(img, title, desc, price) {
@@ -748,15 +1135,19 @@
     function closeModal() {
       document.getElementById("modal").style.display = "none";
 
-      // detener la música SOLO al cerrar el modal
       if (currentMusic) {
         currentMusic.pause();
         currentMusic.currentTime = 0;
       }
     }
+
+    // Cerrar modal al hacer click fuera del contenido
+    document.getElementById("modal").addEventListener("click", function(e) {
+      if (e.target === this) {
+        closeModal();
+      }
+    });
   </script>
-
-
 </body>
 
 </html>
