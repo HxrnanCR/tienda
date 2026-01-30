@@ -177,10 +177,13 @@
     }
 
     @keyframes gentlePulse {
-      0%, 100% {
+
+      0%,
+      100% {
         transform: scale(1);
         box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
       }
+
       50% {
         transform: scale(1.08);
         box-shadow: 0 5px 15px rgba(255, 77, 109, 0.4);
@@ -307,13 +310,14 @@
     </div>
   </header>
 
-   <!-- HOME -->
+  <!-- HOME -->
   <section id="home" class="section active">
     <div class="hero">
       <div class="hero-content">
         <div>
           <h1>Regalos que enamoran de verdad</h1>
-          <p>Boxes personalizados, peluches, ramos de flores y detalles únicos para sorprender en cualquier ocasión. Compra fácil, paga
+          <p>Boxes personalizados, peluches, ramos de flores y detalles únicos para sorprender en cualquier ocasión.
+            Compra fácil, paga
             por Yape y coordina todo por WhatsApp.</p>
           <div class="hero-actions">
             <button class="primary" onclick="show('boxes')">Ver Boxes</button>
@@ -446,7 +450,7 @@
       </div>
     </div>
 
-        <div class="products">
+    <div class="products">
       <div class="card" onclick="openModal(
             'images/BoxAmore.jpeg',
             'Box Amore',
@@ -475,11 +479,11 @@
       <h2>Peluches</h2>
     </div>
 
-    <div class="products">
+        <div class="products">
       <div class="card" onclick="openModal(
             'images/PelucheSpiderman.png',
             'Peluche Spiderman',
-            'Peluche divertido y súper suave.',
+            'El regalo perfecto para fans de Spiderman 🕷️💙 Súper suave, abrazable y con ese toque héroe que alegra cualquier día. Ideal para sorprender sin gastar mucho.',
             'S/ 24.90'
           )">
         <div class="card-img-container">
@@ -497,11 +501,33 @@
       </div>
     </div>
 
+        <div class="products">
+      <div class="card" onclick="openModal(
+            'images/PelucheCorderitoTulipán.png',
+            'Peluche Corderito Tulipán',
+            'Tierno, delicado y lleno de amor 🤍🌷 Perfecto para regalar cariño en forma de abrazo. Ideal para aniversarios, cumpleaños o simplemente decir “pensé en ti”.',
+            'S/ 26.90'
+          )">
+        <div class="card-img-container">
+          <img src="images/PelucheCorderitoTulipán.png" />
+          <div class="click-indicator">
+            <span>👁️</span>
+            <span>Click para ver</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <h3>Peluche Corderito Tulipán</h3>
+          <div class="price">S/ 26.90</div>
+          <a href="https://wa.me/51986341772" onclick="event.stopPropagation()">Comprar por WhatsApp</a>
+        </div>
+      </div>
+    </div>
+
     <div class="products">
       <div class="card" onclick="openModal(
             'images/PelucheHelloKitty.png',
             'Peluche Hello Kitty',
-            'Peluche divertido y súper suave.',
+            'Un clásico que nunca falla 💕 Suave, adorable y perfecto para derretir corazones. Ideal para regalar a alguien especial o consentirte.',
             'S/ 23.90'
           )">
         <div class="card-img-container">
@@ -513,7 +539,29 @@
         </div>
         <div class="card-body">
           <h3>Peluche Hello Kitty</h3>
-          <div class="price">S/ 23.90</div>
+          <div class="price">S/ 24.90</div>
+          <a href="https://wa.me/51986341772" onclick="event.stopPropagation()">Comprar por WhatsApp</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="products">
+      <div class="card" onclick="openModal(
+            'images/PelucheHelloKitty2.png',
+            'Peluche Hello Kitty 2',
+            'Dulce y encantador ✨ Un detalle pequeño pero lleno de amor. Perfecto para sorprender con algo lindo y significativo.',
+            'S/ 26.90'
+          )">
+        <div class="card-img-container">
+          <img src="images/PelucheHelloKitty2.png" />
+          <div class="click-indicator">
+            <span>👁️</span>
+            <span>Click para ver</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <h3>Peluche Hello Kitty 2</h3>
+          <div class="price">S/ 26.90</div>
           <a href="https://wa.me/51986341772" onclick="event.stopPropagation()">Comprar por WhatsApp</a>
         </div>
       </div>
@@ -523,7 +571,7 @@
       <div class="card" onclick="playPelucheMusic(); openModal(
             'images/PelucheMusical.png',
             'Oso Musical',
-            'Peluche con música de Karol G - Ocean o Tanto - Jesse & Joy',
+            'Un peluche que habla con música 🎶💖 de Karol G - Ocean o Tanto - Jesse & Joy. Ideal para sorprender y emocionar.',
             'S/ 25.90'
           )">
         <div class="card-img-container">
@@ -546,7 +594,7 @@
       <div class="card" onclick="openModal(
             'images/PeluchePerrito.png',
             'Peluche Love',
-            'Peluche divertido y súper suave.',
+            'Suave, tierno y con mensaje de amor ❤️ Perfecto para regalar abrazos, cariño y sonrisas en cualquier ocasión.',
             'S/ 23.90'
           )">
         <div class="card-img-container">
@@ -563,6 +611,29 @@
         </div>
       </div>
     </div>
+
+    <div class="products">
+      <div class="card" onclick="openModal(
+            'images/PelucheSnoopy.png',
+            'Peluche Snoopy',
+            'Un peluche lleno de ternura 🤍 Súper suave y perfecto para regalar compañía y cariño. Ideal para fans de Snoopy y amantes de los detalles lindos.',
+            'S/ 27.90'
+          )">
+        <div class="card-img-container">
+          <img src="images/PelucheSnoopy.png" />
+          <div class="click-indicator">
+            <span>👁️</span>
+            <span>Click para ver</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <h3>Peluche Snoopy</h3>
+          <div class="price">S/ 27.90</div>
+          <a href="https://wa.me/51986341772" onclick="event.stopPropagation()">Comprar por WhatsApp</a>
+        </div>
+      </div>
+    </div>
+
   </section>
 
   <!-- RAMOS -->
