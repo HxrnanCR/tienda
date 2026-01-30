@@ -393,11 +393,11 @@
               'images/PelucheHelloKitty.png',
               'Peluche Hello Kitty',
               'Peluche divertido y súper suave.',
-              'S/ 24.90'
+              'S/ 23.90'
             )" />
         <div class="card-body">
           <h3>Peluche Hello Kitty</h3>
-          <div class="price">S/ 89.90</div>
+          <div class="price">S/ 23.90</div>
           <a href="https://wa.me/51986341772">Comprar por WhatsApp</a>
         </div>
       </div>
@@ -405,12 +405,16 @@
 
     <div class="products">
       <div class="card">
-        <img src="images/PelucheMusical.png" onclick="openModal(
-              'images/PelucheMusical.png',
-              'Oso Musical',
-              'Peluche con musica de Karol G - Ocean o Tanto - Jesse & Joy',
-              'S/ 25.90'
-            )" />
+<img src="images/PelucheMusical.png" onclick="
+  playPelucheMusic();
+  openModal(
+    'images/PelucheMusical.png',
+    'Oso Musical',
+    'Peluche con música de Karol G - Ocean o Tanto - Jesse & Joy',
+    'S/ 25.90'
+  )
+" />
+
         <div class="card-body">
           <h3>Oso Musical</h3>
           <div class="price">S/25.90</div>
@@ -429,7 +433,7 @@
             )" />
         <div class="card-body">
           <h3>Peluche Love</h3>
-          <div class="price">S/ 24.90</div>
+          <div class="price">S/ 23.90</div>
           <a href="https://wa.me/51986341772">Comprar por WhatsApp</a>
         </div>
       </div>
@@ -448,27 +452,62 @@
   </div>
 
   <footer>© 2026 Detalles Herith · Regalos con amor</footer>
+  <audio id="music1">
+  <source src="music/ocean.mp4" type="audio/mp4">
+</audio>
 
-  <script>
-    function show(id) {
-      document
-        .querySelectorAll(".section")
-        .forEach((s) => s.classList.remove("active"));
-      document.getElementById(id).classList.add("active");
-    }
+<audio id="music2">
+  <source src="music/tanto.mp4" type="audio/mp4">
+</audio>
+<script>
+  const musics = [
+    document.getElementById("music1"),
+    document.getElementById("music2")
+  ];
 
-    function openModal(img, title, desc, price) {
-      document.getElementById("modal-img").src = img;
-      document.getElementById("modal-title").textContent = title;
-      document.getElementById("modal-desc").textContent = desc;
-      document.getElementById("modal-price").textContent = price;
-      document.getElementById("modal").style.display = "flex";
-    }
+  let currentMusic = null;
 
-    function closeModal() {
-      document.getElementById("modal").style.display = "none";
+  function playPelucheMusic() {
+    // detener cualquier audio anterior
+    musics.forEach(m => {
+      m.pause();
+      m.currentTime = 0;
+    });
+
+    // elegir UNA música al azar
+    currentMusic = musics[Math.floor(Math.random() * musics.length)];
+
+    currentMusic.volume = 0.35;
+    currentMusic.play();
+  }
+
+  function show(id) {
+    document
+      .querySelectorAll(".section")
+      .forEach(s => s.classList.remove("active"));
+    document.getElementById(id).classList.add("active");
+  }
+
+  function openModal(img, title, desc, price) {
+    document.getElementById("modal-img").src = img;
+    document.getElementById("modal-title").textContent = title;
+    document.getElementById("modal-desc").textContent = desc;
+    document.getElementById("modal-price").textContent = price;
+    document.getElementById("modal").style.display = "flex";
+  }
+
+  function closeModal() {
+    document.getElementById("modal").style.display = "none";
+
+    // detener la música SOLO al cerrar el modal
+    if (currentMusic) {
+      currentMusic.pause();
+      currentMusic.currentTime = 0;
     }
-  </script>
+  }
+</script>
+
+
 </body>
 
 </html>
