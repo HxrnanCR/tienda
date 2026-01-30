@@ -137,17 +137,65 @@
       overflow: hidden;
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
       transition: 0.3s;
+      cursor: pointer;
     }
 
     .card:hover {
       transform: translateY(-6px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
     }
 
     .card img {
       width: 100%;
       height: 220px;
       object-fit: cover;
-      cursor: pointer;
+      position: relative;
+    }
+
+    .card-img-container {
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Indicador simple y claro */
+    .click-indicator {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: rgba(255, 77, 109, 0.95);
+      color: white;
+      padding: 8px 14px;
+      border-radius: 25px;
+      font-weight: 600;
+      font-size: 12px;
+      z-index: 2;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      animation: gentlePulse 3s infinite;
+    }
+
+    @keyframes gentlePulse {
+      0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+      }
+      50% {
+        transform: scale(1.08);
+        box-shadow: 0 5px 15px rgba(255, 77, 109, 0.4);
+      }
+    }
+
+    /* Efecto hover suave en toda la tarjeta */
+    .card:hover .card-img-container img {
+      transform: scale(1.05);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover .click-indicator {
+      background: rgba(255, 77, 109, 1);
+      transform: scale(1.1);
     }
 
     .card-body {
@@ -254,22 +302,26 @@
         <button onclick="show('home')">Inicio</button>
         <button onclick="show('boxes')">Boxes</button>
         <button onclick="show('peluches')">Peluches</button>
+        <button onclick="show('ramos')">Ramos</button>
       </nav>
     </div>
   </header>
 
-  <!-- HOME -->
+   <!-- HOME -->
   <section id="home" class="section active">
     <div class="hero">
       <div class="hero-content">
         <div>
           <h1>Regalos que enamoran de verdad</h1>
-          <p>Boxes personalizados, peluches y detalles únicos para sorprender en cualquier ocasión. Compra fácil, paga
+          <p>Boxes personalizados, peluches, ramos de flores y detalles únicos para sorprender en cualquier ocasión. Compra fácil, paga
             por Yape y coordina todo por WhatsApp.</p>
           <div class="hero-actions">
             <button class="primary" onclick="show('boxes')">Ver Boxes</button>
             <button class="secondary" onclick="show('peluches')">
               Ver Peluches
+            </button>
+            <button class="secondary" onclick="show('ramos')">
+              Ver Ramos
             </button>
           </div>
         </div>
@@ -285,81 +337,133 @@
     </div>
 
     <div class="products">
-      <div class="card">
-        <img src="images/BoxCorderito.png" onclick="openModal(
-              'images/BoxCorderito.png',
-              'Box Corderito',
-              'Incluye Caja libro personalizado, Lámpara tulipan amarillo, Dedicatoria, Luces led, Una foto estilo polaroid. ',
-              'S/ 75.90'
-            )" />
+      <div class="card" onclick="openModal(
+            'images/BoxCorderito.png',
+            'Box Corderito',
+            'Incluye Caja libro personalizado, Lámpara tulipan amarillo, Dedicatoria, Luces led, Una foto estilo polaroid. ',
+            'S/ 75.90'
+          )">
+        <div class="card-img-container">
+          <img src="images/BoxCorderito.png" />
+          <div class="click-indicator">
+            <span>👁️</span>
+            <span>Click para ver</span>
+          </div>
+        </div>
         <div class="card-body">
           <h3>Box Corderito</h3>
           <div class="price">S/ 75.90</div>
-          <a href="https://wa.me/51986341772">Comprar por WhatsApp</a>
+          <a href="https://wa.me/51986341772" onclick="event.stopPropagation()">Comprar por WhatsApp</a>
         </div>
       </div>
     </div>
 
     <div class="products">
-      <div class="card">
-        <img src="images/BoxHelloKitty.png" onclick="openModal(
-              'images/BoxHelloKitty.png',
-              'Box Hello Kitty',
-              'Incluye Caja personalizada según temática, Peluche Hello kitty, 1 caja de vizzio/1 trululu/ 1bon a bon, Dedicatoria, Par de foto personalizadas. ',
-              'S/ 75.90'
-            )" />
+      <div class="card" onclick="openModal(
+            'images/BoxHelloKitty.png',
+            'Box Hello Kitty',
+            'Incluye Caja personalizada según temática, Peluche Hello kitty, 1 caja de vizzio/1 trululu/ 1bon a bon, Dedicatoria, Par de foto personalizadas. ',
+            'S/ 75.90'
+          )">
+        <div class="card-img-container">
+          <img src="images/BoxHelloKitty.png" />
+          <div class="click-indicator">
+            <span>👁️</span>
+            <span>Click para ver</span>
+          </div>
+        </div>
         <div class="card-body">
           <h3>Box Hello Kitty</h3>
           <div class="price">S/ 75.90</div>
-          <a href="https://wa.me/51986341772">Comprar por WhatsApp</a>
+          <a href="https://wa.me/51986341772" onclick="event.stopPropagation()">Comprar por WhatsApp</a>
         </div>
       </div>
     </div>
 
     <div class="products">
-      <div class="card">
-        <img src="images/BoxLotso.jpeg" onclick="openModal(
-              'images/BoxLotso.jpeg',
-              'Box Lotso Dormilón',
-              'Incluye Caja personalizada con fotos polarid, Peluche lotso dormilón, 1 bon a bon/ 1 vizzio, Una dedicatoria.',
-              'S/ 60.90'
-            )" />
+      <div class="card" onclick="openModal(
+            'images/BoxLotso.jpeg',
+            'Box Lotso Dormilón',
+            'Incluye Caja personalizada con fotos polarid, Peluche lotso dormilón, 1 bon a bon/ 1 vizzio, Una dedicatoria.',
+            'S/ 60.90'
+          )">
+        <div class="card-img-container">
+          <img src="images/BoxLotso.jpeg" />
+          <div class="click-indicator">
+            <span>👁️</span>
+            <span>Click para ver</span>
+          </div>
+        </div>
         <div class="card-body">
           <h3>Box Lotso Dormilón</h3>
           <div class="price">S/ 60.90</div>
-          <a href="https://wa.me/51986341772">Comprar por WhatsApp</a>
+          <a href="https://wa.me/51986341772" onclick="event.stopPropagation()">Comprar por WhatsApp</a>
         </div>
       </div>
     </div>
 
     <div class="products">
-      <div class="card">
-        <img src="images/BoxEncanto.jpeg" onclick="openModal(
-              'images/BoxEncanto.jpeg',
-              'Box Encanto',
-              'Incluye Caja personalizada según temática, Peluche, Lámpara tulipán, Dedicatoria, Luces led.',
-              'S/ 85.90'
-            )" />
+      <div class="card" onclick="openModal(
+            'images/BoxEncanto.jpeg',
+            'Box Encanto',
+            'Incluye Caja personalizada según temática, Peluche, Lámpara tulipán, Dedicatoria, Luces led.',
+            'S/ 85.90'
+          )">
+        <div class="card-img-container">
+          <img src="images/BoxEncanto.jpeg" />
+          <div class="click-indicator">
+            <span>👁️</span>
+            <span>Click para ver</span>
+          </div>
+        </div>
         <div class="card-body">
           <h3>Box Encanto</h3>
           <div class="price">S/ 85.90</div>
-          <a href="https://wa.me/51986341772">Comprar por WhatsApp</a>
+          <a href="https://wa.me/51986341772" onclick="event.stopPropagation()">Comprar por WhatsApp</a>
         </div>
       </div>
     </div>
 
     <div class="products">
-      <div class="card">
-        <img src="images/BoxSnoopy.jpeg" onclick="openModal(
-              'images/BoxSnoopy.jpeg',
-              'Box Snoopy',
-              'Incluye Caja personalizada, Cubo giratorio de folcote, Peluche snoppy, 4 imágenes personalizadas, Dulces y Dedicatoria',
-              'S/ 80.90'
-            )" />
+      <div class="card" onclick="openModal(
+            'images/BoxSnoopy.jpeg',
+            'Box Snoopy',
+            'Incluye Caja personalizada, Cubo giratorio de folcote, Peluche snoppy, 4 imágenes personalizadas, Dulces y Dedicatoria',
+            'S/ 80.90'
+          )">
+        <div class="card-img-container">
+          <img src="images/BoxSnoopy.jpeg" />
+          <div class="click-indicator">
+            <span>👁️</span>
+            <span>Click para ver</span>
+          </div>
+        </div>
         <div class="card-body">
           <h3>Box Snoopy</h3>
           <div class="price">S/ 85.90</div>
-          <a href="https://wa.me/51986341772">Comprar por WhatsApp</a>
+          <a href="https://wa.me/51986341772" onclick="event.stopPropagation()">Comprar por WhatsApp</a>
+        </div>
+      </div>
+    </div>
+
+        <div class="products">
+      <div class="card" onclick="openModal(
+            'images/BoxAmore.jpeg',
+            'Box Amore',
+            'Incluye peluche lotso dormilón, caja personalizada con fotos, 4 rosas eternas, luces led, y una dedicatoria.',
+            'S/ 75.90'
+          )">
+        <div class="card-img-container">
+          <img src="images/BoxAmore.jpeg" />
+          <div class="click-indicator">
+            <span>👁️</span>
+            <span>Click para ver</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <h3>Box Amore</h3>
+          <div class="price">S/ 75.90</div>
+          <a href="https://wa.me/51986341772" onclick="event.stopPropagation()">Comprar por WhatsApp</a>
         </div>
       </div>
     </div>
@@ -372,72 +476,146 @@
     </div>
 
     <div class="products">
-      <div class="card">
-        <img src="images/PelucheSpiderman.png" onclick="openModal(
-              'images/PelucheSpiderman.png',
-              'Peluche Spiderman',
-              'Peluche divertido y súper suave.',
-              'S/ 24.90'
-            )" />
+      <div class="card" onclick="openModal(
+            'images/PelucheSpiderman.png',
+            'Peluche Spiderman',
+            'Peluche divertido y súper suave.',
+            'S/ 24.90'
+          )">
+        <div class="card-img-container">
+          <img src="images/PelucheSpiderman.png" />
+          <div class="click-indicator">
+            <span>👁️</span>
+            <span>Click para ver</span>
+          </div>
+        </div>
         <div class="card-body">
           <h3>Peluche Spiderman</h3>
           <div class="price">S/ 24.90</div>
-          <a href="https://wa.me/51986341772">Comprar por WhatsApp</a>
+          <a href="https://wa.me/51986341772" onclick="event.stopPropagation()">Comprar por WhatsApp</a>
         </div>
       </div>
     </div>
 
     <div class="products">
-      <div class="card">
-        <img src="images/PelucheHelloKitty.png" onclick="openModal(
-              'images/PelucheHelloKitty.png',
-              'Peluche Hello Kitty',
-              'Peluche divertido y súper suave.',
-              'S/ 23.90'
-            )" />
+      <div class="card" onclick="openModal(
+            'images/PelucheHelloKitty.png',
+            'Peluche Hello Kitty',
+            'Peluche divertido y súper suave.',
+            'S/ 23.90'
+          )">
+        <div class="card-img-container">
+          <img src="images/PelucheHelloKitty.png" />
+          <div class="click-indicator">
+            <span>👁️</span>
+            <span>Click para ver</span>
+          </div>
+        </div>
         <div class="card-body">
           <h3>Peluche Hello Kitty</h3>
           <div class="price">S/ 23.90</div>
-          <a href="https://wa.me/51986341772">Comprar por WhatsApp</a>
+          <a href="https://wa.me/51986341772" onclick="event.stopPropagation()">Comprar por WhatsApp</a>
         </div>
       </div>
     </div>
 
     <div class="products">
-      <div class="card">
-<img src="images/PelucheMusical.png" onclick="
-  playPelucheMusic();
-  openModal(
-    'images/PelucheMusical.png',
-    'Oso Musical',
-    'Peluche con música de Karol G - Ocean o Tanto - Jesse & Joy',
-    'S/ 25.90'
-  )
-" />
+      <div class="card" onclick="playPelucheMusic(); openModal(
+            'images/PelucheMusical.png',
+            'Oso Musical',
+            'Peluche con música de Karol G - Ocean o Tanto - Jesse & Joy',
+            'S/ 25.90'
+          )">
+        <div class="card-img-container">
+          <img src="images/PelucheMusical.png" />
+          <div class="click-indicator">
+            <span>👁️</span>
+            <span>Click para ver</span>
+          </div>
+        </div>
 
         <div class="card-body">
           <h3>Oso Musical</h3>
           <div class="price">S/25.90</div>
-          <a href="https://wa.me/51986341772">Comprar por WhatsApp</a>
+          <a href="https://wa.me/51986341772" onclick="event.stopPropagation()">Comprar por WhatsApp</a>
         </div>
       </div>
     </div>
 
     <div class="products">
-      <div class="card">
-        <img src="images/PeluchePerrito.png" onclick="openModal(
-              'images/PeluchePerrito.png',
-              'Peluche Love',
-              'Peluche divertido y súper suave.',
-              'S/ 23.90'
-            )" />
+      <div class="card" onclick="openModal(
+            'images/PeluchePerrito.png',
+            'Peluche Love',
+            'Peluche divertido y súper suave.',
+            'S/ 23.90'
+          )">
+        <div class="card-img-container">
+          <img src="images/PeluchePerrito.png" />
+          <div class="click-indicator">
+            <span>👁️</span>
+            <span>Click para ver</span>
+          </div>
+        </div>
         <div class="card-body">
           <h3>Peluche Love</h3>
           <div class="price">S/ 23.90</div>
-          <a href="https://wa.me/51986341772">Comprar por WhatsApp</a>
+          <a href="https://wa.me/51986341772" onclick="event.stopPropagation()">Comprar por WhatsApp</a>
         </div>
       </div>
     </div>
+  </section>
+
+  <!-- RAMOS -->
+  <section id="ramos" class="section">
+    <div class="section-title">
+      <h2>Ramos</h2>
+    </div>
+
+    <div class="products">
+      <!-- Aquí puedes agregar tus productos de ramos -->
+      <div class="card" onclick="openModal(
+            'images/RamoLotso.jpeg',
+            'Ramo Lotso Dormilón',
+            'Incluye 10 rosas eternas, Tul de perlas, Dedicatoria y Peluche Lotso dormilón',
+            'S/ 90.90'
+          )">
+        <div class="card-img-container">
+          <img src="images/RamoLotso.jpeg" />
+          <div class="click-indicator">
+            <span>👁️</span>
+            <span>Click para ver</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <h3>Ramo Lotso Dormilón</h3>
+          <div class="price">S/ 90.90</div>
+          <a href="https://wa.me/51986341772" onclick="event.stopPropagation()">Comprar por WhatsApp</a>
+        </div>
+      </div>
+    </div>
+    <div class="products">
+      <!-- Aquí puedes agregar tus productos de ramos -->
+      <div class="card" onclick="openModal(
+            'images/RamoAmore.jpeg',
+            'Ramo Amore',
+            'Incluye 8 rosas eternas(2 colores a elección), 8 fotos, 1 mariposa y 1 dedicatoria.',
+            'S/ 50.90'
+          )">
+        <div class="card-img-container">
+          <img src="images/RamoAmore.jpeg" />
+          <div class="click-indicator">
+            <span>👁️</span>
+            <span>Click para ver</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <h3>Ramo Amore</h3>
+          <div class="price">S/ 50.90</div>
+          <a href="https://wa.me/51986341772" onclick="event.stopPropagation()">Comprar por WhatsApp</a>
+        </div>
+      </div>
+    </div>
+
   </section>
 
   <!-- MODAL -->
@@ -453,59 +631,59 @@
 
   <footer>© 2026 Detalles Herith · Regalos con amor</footer>
   <audio id="music1">
-  <source src="music/ocean.mp4" type="audio/mp4">
-</audio>
+    <source src="music/ocean.mp4" type="audio/mp4">
+  </audio>
 
-<audio id="music2">
-  <source src="music/tanto.mp4" type="audio/mp4">
-</audio>
-<script>
-  const musics = [
-    document.getElementById("music1"),
-    document.getElementById("music2")
-  ];
+  <audio id="music2">
+    <source src="music/tanto.mp4" type="audio/mp4">
+  </audio>
+  <script>
+    const musics = [
+      document.getElementById("music1"),
+      document.getElementById("music2")
+    ];
 
-  let currentMusic = null;
+    let currentMusic = null;
 
-  function playPelucheMusic() {
-    // detener cualquier audio anterior
-    musics.forEach(m => {
-      m.pause();
-      m.currentTime = 0;
-    });
+    function playPelucheMusic() {
+      // detener cualquier audio anterior
+      musics.forEach(m => {
+        m.pause();
+        m.currentTime = 0;
+      });
 
-    // elegir UNA música al azar
-    currentMusic = musics[Math.floor(Math.random() * musics.length)];
+      // elegir UNA música al azar
+      currentMusic = musics[Math.floor(Math.random() * musics.length)];
 
-    currentMusic.volume = 0.35;
-    currentMusic.play();
-  }
-
-  function show(id) {
-    document
-      .querySelectorAll(".section")
-      .forEach(s => s.classList.remove("active"));
-    document.getElementById(id).classList.add("active");
-  }
-
-  function openModal(img, title, desc, price) {
-    document.getElementById("modal-img").src = img;
-    document.getElementById("modal-title").textContent = title;
-    document.getElementById("modal-desc").textContent = desc;
-    document.getElementById("modal-price").textContent = price;
-    document.getElementById("modal").style.display = "flex";
-  }
-
-  function closeModal() {
-    document.getElementById("modal").style.display = "none";
-
-    // detener la música SOLO al cerrar el modal
-    if (currentMusic) {
-      currentMusic.pause();
-      currentMusic.currentTime = 0;
+      currentMusic.volume = 0.35;
+      currentMusic.play();
     }
-  }
-</script>
+
+    function show(id) {
+      document
+        .querySelectorAll(".section")
+        .forEach(s => s.classList.remove("active"));
+      document.getElementById(id).classList.add("active");
+    }
+
+    function openModal(img, title, desc, price) {
+      document.getElementById("modal-img").src = img;
+      document.getElementById("modal-title").textContent = title;
+      document.getElementById("modal-desc").textContent = desc;
+      document.getElementById("modal-price").textContent = price;
+      document.getElementById("modal").style.display = "flex";
+    }
+
+    function closeModal() {
+      document.getElementById("modal").style.display = "none";
+
+      // detener la música SOLO al cerrar el modal
+      if (currentMusic) {
+        currentMusic.pause();
+        currentMusic.currentTime = 0;
+      }
+    }
+  </script>
 
 
 </body>
